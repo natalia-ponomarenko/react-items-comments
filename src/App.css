@@ -1,0 +1,250 @@
+.react-app {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-around;
+  text-align: center;
+  color: #353535;
+  font-size: 16px;
+  line-height: 1.6em;
+  max-width: 95%;
+  width: 100%;
+}
+
+.react-items,
+.react-comments {
+  min-width: 500px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.react-items h1,
+.react-comments h1 {
+  text-align: left;
+  font-weight: normal;
+  color: gray;
+}
+
+.react-items-input-group .form-control {
+  margin: 0 10px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+  outline:1px solid #0069d9;
+}
+
+.react-items-input-group {
+  margin: 10px 0;
+  display: flex;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+  border-color: #dc3545;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.react-items .active-item {
+  border-left: 4px solid deeppink;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.react-items .badge {
+  position: absolute;
+  right: 110px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8;
+}
+
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+
+.react-comments form input[type=color] {
+  width: 100px;
+  height: 60px;
+}
+
+.react-comments form textarea {
+  margin: 0 10px;
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.react-comments form {
+  margin-top: 20px;
+  display: flex;
+}
+
+.react-comments form button {
+  max-height: 90px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.react-comment .card {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  border: none;
+  margin: 10px;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
+}
+
+.react-comment .card-color {
+  width: 50px;
+  height: 50px;
+}
+
+.react-comment .card-body {
+  padding: 0 0 0 10px;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.react-comment .card pre {
+  text-align: left;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: 400px;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+pre {
+  display: block;
+  font-size: 12px;
+  color: #212529;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .react-app {
+    flex-direction: row;
+  }
+}
