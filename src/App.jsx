@@ -78,30 +78,37 @@ function App() {
     setCommentColor(e.target.value);
   };
 
-  const handleAddComment = () => {
+  const handleAddComment = (selectedItemId) => {
     const randomIndex = Math.floor(Math.random() * 100000000);
-
-    if (comment.trim() !== "") {
+  
+    if (comment.trim() !== "" && selectedItemId !== null) {
+      const updatedSelectedItem = { ...selectedItem };
       const updatedList = [...itemList];
+
       const selectedItemIndex = updatedList.findIndex(
-        (item) => item.id === selectedItem.id
+        (item) => item.id === selectedItemId
       );
 
-      if (selectedItemIndex !== -1) {
-        const newComment = {
-          id: randomIndex,
-          text: comment,
-          color: commentColor,
-        };
+      const newComment = {
+        id: randomIndex,
+        text: comment,
+        color: commentColor,
+      };
 
-        setSelectedItem(
-          updatedList.find((item) => item.id === selectedItem.id)
-        );
-        updatedList[selectedItemIndex].comments.push(newComment);
-        setItemList(updatedList);
-        setComment("");
-        setCommentColor("#000000");
+      if (selectedItemIndex !== -1) {
+        updatedList[selectedItemIndex] = updatedSelectedItem;
       }
+  
+      updatedSelectedItem.comments.push(newComment);
+
+      setItemList(updatedList);
+      setSelectedItem(updatedSelectedItem);
+
+      localStorage.setItem("itemList", JSON.stringify(updatedList));
+      localStorage.setItem("selectedItem", JSON.stringify(updatedSelectedItem));
+  
+      setComment("");
+      setCommentColor("#000000");
     }
   };
 
