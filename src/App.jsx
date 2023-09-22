@@ -94,6 +94,9 @@ function App() {
           color: commentColor,
         };
 
+        setSelectedItem(
+          updatedList.find((item) => item.id === selectedItem.id)
+        );
         updatedList[selectedItemIndex].comments.push(newComment);
         setItemList(updatedList);
         setComment("");
@@ -119,6 +122,7 @@ function App() {
             <button
               className="btn btn-info"
               onClick={handleAddItem}
+              type="button"
             >
               Add New
             </button>
@@ -167,7 +171,7 @@ function App() {
                       height: "50px",
                       backgroundColor: comment.color,
                     }}
-                  ></div>
+                  />
                   <div className="card-body">
                     <pre className="card-text">{comment.text}</pre>
                   </div>
@@ -191,7 +195,7 @@ function App() {
               <button
                 className="btn btn-primary"
                 onClick={handleAddComment}
-                type="submit"
+                type="button"
               >
                 Add New
               </button>
