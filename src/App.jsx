@@ -7,7 +7,7 @@ function App() {
     JSON.parse(localStorage.getItem("itemList")) || []
   );
   const [selectedItem, setSelectedItem] = useState(
-    JSON.parse(localStorage.getItem("selectedItem") || {})
+    JSON.parse(localStorage.getItem("selectedItem")) || {}
   );
   const [comment, setComment] = useState("");
   const [commentColor, setCommentColor] = useState("#000000");
@@ -16,6 +16,11 @@ function App() {
     const storedItemList = localStorage.getItem("itemList");
     if (storedItemList) {
       setItemList(JSON.parse(storedItemList));
+    }
+
+    const storedSelectedItem = localStorage.getItem("selectedItem");
+    if (storedSelectedItem) {
+      setSelectedItem(JSON.parse(storedSelectedItem));
     }
   }, []);
 
@@ -33,7 +38,7 @@ function App() {
     } else if (!itemList.find((item) => item.id === selectedItem.id)) {
       setSelectedItem(itemList[itemList.length - 1]);
     }
-  }, [itemList]);
+  }, [itemList, selectedItem.id]);
 
   const handleItemChange = (e) => {
     setItem(e.target.value);
@@ -41,12 +46,14 @@ function App() {
 
   const handleAddItem = () => {
     const randomIndex = Math.floor(Math.random() * 100000000);
+
     if (item.trim() !== "") {
       const newItem = {
         id: randomIndex,
         name: item,
         comments: [],
       };
+
       setItemList([...itemList, newItem]);
       setItem("");
     }
@@ -73,6 +80,7 @@ function App() {
 
   const handleAddComment = () => {
     const randomIndex = Math.floor(Math.random() * 100000000);
+
     if (comment.trim() !== "") {
       const updatedList = [...itemList];
       const selectedItemIndex = updatedList.findIndex(

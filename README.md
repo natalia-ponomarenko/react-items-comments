@@ -1,8 +1,19 @@
-# React + Vite
+# React Items and Comments form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [DEMO LINK](https://natalia-ponomarenko.github.io/react-items-comments)
 
-Currently, two official plugins are available:
+### Technologies 🛠️:
+- React (Vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### How to run project locally
+* Fork and clone this repository
+* npm i
+* npm run dev
+* open your browser at http://localhost:5173
+
+### Dependencies
+Node v12.16.3 and higher
+NPM v6.14.4 and higher
+
+### Troubleshooting
+For any contributing or problem solving you could find me - [here](https://t.me/ponomarenko_nataliia)
